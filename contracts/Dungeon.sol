@@ -169,10 +169,6 @@ contract Dungeon {
         Helper part
     */
 
-    // TODO this will be deprecated
-    function getTraps() external view returns (uint256) {
-        return $traps;
-    }
 
     function _attempt(bool condition, uint256 value, address to, string memory good, string memory bad) private {
         if (condition) {
