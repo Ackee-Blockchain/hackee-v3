@@ -18,6 +18,7 @@ contract Dungeon {
     Spawner public $spawner;
     NPC public $storyTeller;
     NPC public $mathematican;
+    NPC public $finalBoss;
 
     mapping(bytes4 => bool) public $quests;
     uint256 private $traps;
@@ -55,6 +56,14 @@ contract Dungeon {
     modifier altarFound() {
         require(
             $quests[this.dodgeTraps.selector] == true,
+            "These functions cannot be called"
+        );
+        _;
+    }
+
+    modifier bossSpawned() {
+        require(
+            $quests[this.spawnFinalBoss.selector] == true,
             "These functions cannot be called"
         );
         _;
@@ -147,10 +156,15 @@ contract Dungeon {
     }
 
     // get 10000 tokens
-    function spawnFinalBoss() external altarFound cleanRoom lootGained challenger takeQuest {
-        NPC finalBoss = NPC(_spawn(keccak256("finalBoss"), type(FinalBoss).creationCode));
-        bytes memory result = finalBoss.interaction(abi.encodePacked(msg.sender));
-        _attempt(abi.decode(result, (bool)) == true, 10000, msg.sender, "What a legend!", "You have been defecated");
+    function spawnFinalBoss() external challenger altarFound cleanRoom lootGained takeQuest {
+        $finalBoss = NPC(_spawn(keccak256("finalBoss"), abi.encodePacked(type(FinalBoss).creationCode, abi.encode(msg.sender))));
+    }
+
+    function finalBoss() external bossSpawned takeQuest {
+        uint256 defeated;
+        address f = address($finalBoss);
+        assembly { defeated := extcodesize(f) }
+        _attempt(defeated == 0, 10000, msg.sender, "What a legend!", "You have been defecated");
     }
 
     // get something

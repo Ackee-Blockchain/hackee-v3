@@ -7,11 +7,11 @@ contract NPC {
         return bytes(hex"42");
     }
 
-    function kill(address backpack) external {
+    function kill(address backpack) external virtual {
         selfdestruct(payable(backpack));
     }
 
-    function givelife(bytes memory lifeform) external payable {
+    function givelife(bytes memory lifeform) external virtual payable {
         assembly {
             if iszero(create(0, add(lifeform, 32), mload(lifeform))) {
                 revert(0, 0)
