@@ -1,6 +1,6 @@
 # Hackee v3
 <p align="center">
-  <img width="588" alt="image" src="https://github.com/Ackee-Blockchain/hackee-v3/assets/56036748/f34be7d9-a187-4b2d-828d-27564da6b293">
+  <img width="618" alt="image" src="https://github.com/Ackee-Blockchain/hackee-v3/assets/56036748/dbbb3521-999f-4f61-bdb2-63bf68347122">
 </p>
 
 ## Goal
