@@ -1,4 +1,4 @@
-from woke.deployment import *
+from wake.deployment import *
 
 NODE_URL = "ENTER_NODE_URL_HERE"
 

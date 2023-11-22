@@ -1,9 +1,10 @@
 
-.woke-build
-.woke-logs
+.wake-build
+.wake-logs
 .env
 pytypes
 __pycache__/
 *.py[cod]
 .hypothesis/
-woke-coverage.cov
+wake-coverage.cov
+.wake

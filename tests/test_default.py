@@ -1,4 +1,4 @@
-from woke.testing import *
+from wake.testing import *
 
 from pytypes.contracts.Dungeon import Dungeon
 

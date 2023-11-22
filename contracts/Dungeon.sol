@@ -12,7 +12,7 @@ import "./FinalBoss.sol";
 import "./Spawner.sol";
 
 /* Helpers */
-import "woke/console.sol";
+import "wake/console.sol";
 
 contract Dungeon {
     Spawner public $spawner;

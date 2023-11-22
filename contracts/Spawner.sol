@@ -4,7 +4,7 @@ pragma solidity =0.8.20;
 
 import "./NPC.sol";
 
-import 'woke/console.sol';
+import 'wake/console.sol';
 
 contract Spawner {
     address private $dungeon;

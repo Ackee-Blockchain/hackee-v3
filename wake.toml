@@ -1,15 +1,11 @@
 [compiler.solc]
-ignore_paths = ["node_modules", ".woke-build", "venv", "lib"]
+exclude_paths = ["node_modules", "venv", ".venv", "lib", "script", "test"]
 include_paths = ["node_modules"]
-evm_version = "shanghai"
-
-[compiler.solc.optimizer]
-enabled = false
-runs = 200
 
 [detectors]
 exclude = []
-ignore_paths = ["node_modules", ".woke-build", "venv", "lib"]
+ignore_paths = ["venv", ".venv", "test"]
+exclude_paths = ["node_modules", "lib", "script"]
 
 [testing]
 cmd = "anvil"

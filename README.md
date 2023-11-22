@@ -7,7 +7,7 @@
 - Gain as much Dungeon tokens as you can
 
 ## Setup
-- Install [Woke](ackeeblockchain.com/woke/docs/latest/)
-- `woke init pytypes`
+- Install [Wake](ackeeblockchain.com/wake/docs/latest/)
+- `wake init pytypes`
 - Write exploit
-- `woke test`
+- `wake test`
